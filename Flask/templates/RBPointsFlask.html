@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Enter player name">
+    <button id="searchButton" onclick = 'search()'>Search</button>
+    <div id="plot1"></div>
+    <div id="popupContainer" class="popup-container">
+        <!-- Popup content -->
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <p>TRY AGAIN!!!!</p>
+        </div>
+      </div>
+
+      <script src="{{ url_for('static', filename='../static/RBPointsFlask.js') }}"></script>
+      <script src="../static/RBPointData.json" type = "application/json"></script>></script>
+      
+
+      
+    
+</body>
+</html>

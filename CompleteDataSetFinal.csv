@@ -1,4 +1,4 @@
-,Week,Name,Position,Year,Game,FantasyPoints,PassingYards,PassingTDs,Ints,RushAttempts,RushYards,Fumbles,RushTDs,Receptions,ReceivingYards,ReceivingTDs
+Id,Week,Name,Position,Year,Game,FantasyPoints,PassingYards,PassingTDs,Ints,RushAttempts,RushYards,Fumbles,RushTDs,Receptions,ReceivingYards,ReceivingTDs
 0,1.0,Lamar Jackson,QB,2019,BAL@MIA,42.0,324.0,5.0,0,3,6,0,0,,,
 1,1.0,Dak Prescott,QB,2019,NYG@DAL,41.0,405.0,4.0,0,4,12,0,0,,,
 2,1.0,Deshaun Watson,QB,2019,HOU@NO,36.0,268.0,3.0,1,4,40,0,1,,,

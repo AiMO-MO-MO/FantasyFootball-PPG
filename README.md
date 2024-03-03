@@ -8,7 +8,7 @@ With so many uncertainties, it's challenging to pinpoint the reasons behind a pl
 
 To help address these questions and make more informed decisions, we’ve developed the following dashboard to allow you to see a player's historic weekly performance.
 
-## Dashboard Components:
+## Weekly Performance Dashboard:
 - **Top Chart**
 - **Bottom Left**
 - **Bottom Right**
@@ -20,11 +20,13 @@ To help address these questions and make more informed decisions, we’ve develo
   - Player Search
   - Home: back to home for new position
 
-## Data Wrangling: 
+## Git Hub Directory:
+
+### Data Wrangling: 
 - Web Scraping
 - Transforming
 
-## Data Design: 
+### Data Design: 
 - Table Schema
 - Queries
 - ERD

@@ -1,5 +1,5 @@
 let week = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18'];
-let gameyear = [];
+let gameyear = [];//make lists of data for functions 
 let gameweek = [];
 let gamefantasyPoints = [];
 let gamerushingyards = [];
@@ -11,29 +11,29 @@ let YearlyRecievingTDPoints = [];
 let YearlyReceptionPoints = [];
 let YearlyRushTDPoints = [];
 
-let RBlast5 = '/RB5.json';
+let RBlast5 = '/RB5.json';//define the data sources
 let RBbyweek = '/RBPointData.json';
 let RBbyYear = '/RBYear.json';
 
 
-let urls = [RBlast5, RBbyweek, RBbyYear];
+let urls = [RBlast5, RBbyweek, RBbyYear];//combine data sources into one so you can make PromiseAll
 
 function search() {
-    let searchInput = document.getElementById('searchInput');
-    let searchText = searchInput.value.toLowerCase();
-    let promises = urls.map(url => fetch(url).then(response => response.json()));
+    let searchInput = document.getElementById('searchInput');//Where is the search happening? 
+    let searchText = searchInput.value.toLowerCase(); //define the text we are looking to compare the key to
+    let promises = urls.map(url => fetch(url).then(response => response.json())); //what do we want to promise and get data form? 
     
 
-    Promise.all(promises)
+    Promise.all(promises)//import data
     .then(data => {
-        console.log(data[2]);
-        let points = data[1];
-        let keyFound = Object.keys(points).find(key => key.toLowerCase().includes(searchText));
-        if (keyFound) {
+        console.log(data[2]);//check to make sure that it worked 
+        let points = data[1];//get data regarding points per week 
+        let keyFound = Object.keys(points).find(key => key.toLowerCase().includes(searchText));//what key do we want to compares with search term
+        if (keyFound) {//ploting the key and the data if the search term matches key
             plot(keyFound, points[keyFound]);
-                let games = data[0];
-                let filteredGameData = games[keyFound];
-                if (filteredGameData) {
+                let games = data[0];//pull up the metadata
+                let filteredGameData = games[keyFound];// find your key withing the metadata dictionary {key:metadata}
+                if (filteredGameData) {;//clear out metadata 
                     gameyear = [];
                     gameweek = [];
                     gamefantasyPoints = [];
@@ -42,7 +42,7 @@ function search() {
                     gamerecyards = [];
                     gamerecTDs = [];
                         // Clearing the arrays
-                    filteredGameData.forEach(stats => {
+                    filteredGameData.forEach(stats => {//add new metadata
                         gameyear.push(stats[1]);
                         gameweek.push(stats[2]);
                         gamefantasyPoints.push(stats[3]);
@@ -52,17 +52,17 @@ function search() {
                         gamerecTDs.push(stats[7])
 
                     });
-                    metadata(gameyear, gameweek, gamefantasyPoints, gamerushingyards, gamerushtds,gamerecyards,gamerecTDs);
-                    let yearstats = data[2];
-                    let filteredYearStats = yearstats[keyFound];
-                    if (filteredYearStats){
+                    metadata(gameyear, gameweek, gamefantasyPoints, gamerushingyards, gamerushtds,gamerecyards,gamerecTDs);//run fucntion to add metadata to panel 
+                    let yearstats = data[2];//pull yearly data
+                    let filteredYearStats = yearstats[keyFound];//find the key and the corresponding yearly stats 
+                    if (filteredYearStats){//clear yeaerly stats
                         YearlyFantasyPoints = [];
                         YearlyRecievingTDPoints = [];
                         YearlyRushTDPoints = [];
                         YearlyReceptionPoints = [];
                   
               
-                        filteredYearStats.forEach(points => {
+                        filteredYearStats.forEach(points => {//add yearly stats to lists based on key
                             console.log(points)
                             YearlyFantasyPoints.push(points.Fantasy_Points)
                             YearlyRushTDPoints.push(points.Rush_TD_Points)
@@ -70,11 +70,11 @@ function search() {
                             YearlyReceptionPoints.push(points.Reception_Points)
 
                           })
-                        stackedbar(YearlyRushTDPoints,YearlyRecievingTDPoints,YearlyReceptionPoints)
+                        stackedbar(YearlyRushTDPoints,YearlyRecievingTDPoints,YearlyReceptionPoints)//use function to plot in stacked bar chart
                 }
 
                           } else {
-                console.log('No matching player found');
+                console.log('No matching player found');//else key is not found 
             }
 
 
@@ -87,7 +87,7 @@ function search() {
         } else {
             // Handle case when no matching key is found
         console.log('No matching key found');
-        openPopup();
+        openPopup();//call open pop up function
     }})}
 
 
@@ -104,15 +104,10 @@ function search() {
                     
              
            
-          
-            
-   
+    
 
 
-  
-
-
-function plot(key, values) {
+function plot(key, values) {//funciton to plot weekly stats 
     let trace1 = {
         x: week,
         y: values,
@@ -144,25 +139,15 @@ function plot(key, values) {
     Plotly.newPlot('plot1', plotData, layout);
 }
 
-function metadata(gameyears, gameweek, gameFantasyPoints,gamerushingyards, gamerushtds,gamerecyards,gamerecTDs) {
-    let metadataPanel = d3.select("#sample-metadata");
-    metadataPanel.html("")
-    for (let i = 0; i < gameyears.length; i++) {
+function metadata(gameyears, gameweek, gameFantasyPoints,gamerushingyards, gamerushtds,gamerecyards,gamerecTDs) {//function to plot metadata
+    let metadataPanel = d3.select("#sample-metadata");//Where do we want the metadata withing the html page 
+    metadataPanel.html("")//clear the panel
+    for (let i = 0; i < gameyears.length; i++) {//add the 5 games 
         metadataPanel.append("p")
             .html(`<b>Year:</b> ${gameyears[i]}  <b>Game Week:</b> ${gameweek[i]}  <b>Points:</b> ${gameFantasyPoints[i]}  <b>Rushing Yards:</b> ${gamerushingyards[i]}  <b>Rushing TDs:</b> ${gamerushtds[i]} <b>Receiving YDS:</b> ${gamerecyards[i]} <b>Receiving TDS:</b> ${gamerecTDs[i]}`);
     }
 }
-    //metadataPanel.append("p")
-       // .text(`Year: ${gameyears[0]}, GameWeek: ${gameweek[0]}, Points: ${gameFantasyPoints[0]}, PassingYards: ${gamePassingYards[0]}`);
-    //metadataPanel.append("p")
-       // .text(`Year: ${gameyears[1]}, GameWeek: ${gameweek[1]}, Points: ${gameFantasyPoints[1]}, PassingYards: ${gamePassingYards[1]}`);
-   //metadataPanel.append("p")
-        //.text(`Year: ${gameyears[2]}, GameWeek: ${gameweek[2]}, Points: ${gameFantasyPoints[2]}, PassingYards: ${gamePassingYards[2]}`);
-    //metadataPanel.append("p")
-        //.text(`Year: ${gameyears[3]}, GameWeek: ${gameweek[3]}, Points: ${gameFantasyPoints[3]}, PassingYards: ${gamePassingYards[3]}`);
-   // metadataPanel.append("p")
-        //.text(`Year: ${gameyears[4]}, GameWeek: ${gameweek[4]}, Points: ${gameFantasyPoints[4]}, PassingYards: ${gamePassingYards[4]}`);
-
+   
 
  function stackedbar(YearlyRushTDPoints,YearlyRecievingTDPoints,YearlyReceptionPoints) {
     const canvas = document.getElementById('stackedBarChart');
@@ -242,7 +227,7 @@ function metadata(gameyears, gameweek, gameFantasyPoints,gamerushingyards, gamer
         
 
 function openPopup() {
-    document.getElementById('popupContainer').style.display = 'block';
+    document.getElementById('popupContainer').style.display = 'block';//function to open popup if search text is not found in keys
 }
 
 function closePopup() {

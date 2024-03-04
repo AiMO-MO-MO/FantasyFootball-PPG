@@ -73,6 +73,8 @@ Furthermore, the dataset encompasses player performance data from the past five 
 Inclusive of all available data points, even instances where players have scored zero points are included. However, the reasons behind these zero scores are not explicitly displayed within the dashboard. 
 
 ## Data Source: [FootballDB](https://www.footballdb.com/fantasy-football/index.html?pos=RB&yr=2023&wk=%7Bx%7D&key=b6406b7aea3872d5bb677f064673c57f%27)
+## Image: Freepik Realistic american footbal stadium 
+https://www.freepik.com/free-vector/realistic-american-football-stadium_11733976.htm#query=american%20football%20field&position=0&from_view=keyword&track=ais&uuid=2e6983e7-c456-443a-8021-03bd72de6675
 
 ## Libraries: 
 - Flask

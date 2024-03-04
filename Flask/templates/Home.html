@@ -4,27 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-image: url('static/FFbackground.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        /* Style the header */
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        /* Style the h1 element */
+        h1 {
+            font-size: 48px; /* Change font size */
+            color: #f2f4f4; /* Change font color */
+        }
+        /* Style the p element */
+        p {
+            font-size: 22px; /* Change font size */
+            color: #ededf3; /* Change font color */
+        }
+        /* Style the buttons */
+        button {
+            margin: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <button id = "button1"> QB </button>
-    <button id = 'button2'>RB</button>
-    <button id = 'button3'>WR</button>
+    <div class="header">
+        <h1>Welcome to Player Trends</h1>
+        <p>Explore player statistics and trends below.</p>
+    </div>
 
-    <script>
-        document.getElementById('button1').addEventListener('click', function(){
-            window.location.href = '/QB';
-        });
-
-        document.getElementById('button2').addEventListener('click', function(){
-            window.location.href = '/RB';
-        });
-
-        document.getElementById('button3').addEventListener('click', function(){
-            window.location.href = '/WR';
-        });
-
-
-    </script>
-    
+    <button id="button1">QB</button>
+    <button id="button2">RB</button>
+    <button id="button3">WR</button>
 </body>
 </html>

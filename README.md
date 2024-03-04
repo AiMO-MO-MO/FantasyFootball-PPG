@@ -29,11 +29,20 @@ Run the App.py in the Flask/Static folder to access the dashboard.
 - **Bottom Right**
 
 
-## How to use the Weekly Performance Dashboard: 
-- Access FantasyPointsTrendAnalyzer via the Flask app in the Flaskfolder.
-- Once on the Home Page, Select Position:
-  - Player Search
-  - Home: back to home for new position
+## How to use the Player Performance Dashboard via Flask App: 
+
+
+
+To access the Player Performance Dashboard, navigate to the Flask app located in the Flaskfolder directory and run the App.py file.
+
+Navigating the Home Page:
+
+Once you've accessed the Flask app, you'll land on the Home Page. Choose the position you want to analyze.
+
+Player Page:
+
+After selecting a position, you'll have the option to use the player search feature. This feature enables you to search for specific players and view their performance trends over time.
+At any point, you can return to the Home Page by clicking "Home."
 
 ## Git Hub Directory:
 

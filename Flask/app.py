@@ -4,22 +4,22 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-    return render_template('static', 'Home.html')
+    return render_template('Home.html')
 
 
 
 @app.route('/QB')#button to QB page 
 def qb_index():
-    return render_template('static', 'QBPointsFlask.html')
+    return render_template('QBPointsFlask.html')
 
 
 @app.route('/RB')#button to RB page 
 def rb_index():
-    return render_template('static', 'RBPointsFlask.html')
+    return render_template('RBPointsFlask.html')
 
 @app.route('/WR')#button to WR page
 def wr_index():
-    return render_template('static', 'WRPointsFlask.html')
+    return render_template('WRPointsFlask.html')
 
 @app.route('/QB5.json')#import QB last 5 games data 
 def get_QB5_data():

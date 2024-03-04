@@ -50,5 +50,19 @@
     <button id="button1">QB</button>
     <button id="button2">RB</button>
     <button id="button3">WR</button>
+    <script>
+        // Add event listeners to the buttons to redirect to the corresponding routes
+        document.getElementById('button1').addEventListener('click', function(){
+            window.location.href = '/QB';
+        });
+
+        document.getElementById('button2').addEventListener('click', function(){
+            window.location.href = '/RB';
+        });
+
+        document.getElementById('button3').addEventListener('click', function(){
+            window.location.href = '/WR';
+        });
+    </script>
 </body>
 </html>

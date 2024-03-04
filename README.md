@@ -1,6 +1,15 @@
-# FantasyFootball-PPG
+# Project 3 (Data Visualization)
+
+## Group Members:
+- Avani Patel
+- Clarke Allan
+- Matt Owens
+- Banesa Casillas
 
 # Fantasy Football Weekly Performance Dashboard
+
+
+
 
 If you've been playing fantasy football for some time, you've likely experienced the frustration of having a seemingly unbeatable team early in the season, only to see it falter in the playoffs.
 
@@ -43,6 +52,8 @@ Fantasy Football data is based on NFL game statistics. Selection Bias is still s
 - Splinter
 - BeautifulSoup
 - Selenium
+- Plotly
+- Chart.JS
 
 ## Technologies: 
 - SQL 
@@ -50,14 +61,7 @@ Fantasy Football data is based on NFL game statistics. Selection Bias is still s
 - Python 
 - Jupyter Notebook 
 - ChatGPT
-- JS.Code
+- JavaScript
+- CSS
 
-## Group Members:
-- Avani Patel
-- Clarke Allan
-- Matt Owens
-- Banesa Casillas
 
- We will follow 'Data Visualization' track for Project-3. Using the dataset below, we will create a database to contain the weekly scores for each player. 
-
- Dataset: https://www.footballdb.com/fantasy-football/index.html?pos=RB&yr=2023&wk={x}&key=b6406b7aea3872d5bb677f064673c57f%27

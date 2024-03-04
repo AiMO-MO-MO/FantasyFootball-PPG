@@ -57,7 +57,7 @@ Fantasy Football data is based on NFL game statistics. Selection Bias is still s
 
 ## Technologies: 
 - SQL 
-- PGadmin 
+- PostgresSQL
 - Python 
 - Jupyter Notebook 
 - ChatGPT

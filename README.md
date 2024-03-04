@@ -6,7 +6,7 @@
 - Matt Owens
 - Banesa Casillas
 
-# Fantasy Football Weekly Performance Dashboard
+# Fantasy Footbal Player Performance Dashboard
 
 
 
@@ -17,20 +17,21 @@ With so many uncertainties, it's challenging to pinpoint the reasons behind a pl
 
 To help address these questions and make more informed decisions, we’ve developed the following dashboard to allow you to see a player's historic weekly performance.
 
-## Weekly Performance Dashboard:
+## Player Performance Dashboard:
 
 Run the App.py in the Flask/Static folder to access the dashboard. 
-
+Home Screen:
 ![image](https://github.com/AiMO-MO-MO/FantasyFootball-PPG/assets/130156500/43276b0f-fbf6-4d03-b207-68e72801c5a6)
 
+Player Display:
+![image](https://github.com/AiMO-MO-MO/FantasyFootball-PPG/assets/130156500/33b28202-f813-4202-a99f-dfc5867654ba)
 
-- **Top Chart**
-- **Bottom Left**
-- **Bottom Right**
+- **Top Chart** Displays the players cumulitive points over the last 5 years of data by week
+- **Bottom Left** Displays the breakdown of how they earned fantasy points
+- **Bottom Right** Displays the most recent 5 performances
 
 
 ## How to use the Player Performance Dashboard via Flask App: 
-
 
 
 To access the Player Performance Dashboard, navigate to the Flask app located in the Flaskfolder directory and run the App.py file.
@@ -62,7 +63,7 @@ Furthermore, the dataset encompasses player performance data from the past five 
 
 Inclusive of all available data points, even instances where players have scored zero points are included. However, the reasons behind these zero scores are not explicitly displayed within the dashboard. Transparency remains paramount, and any external imagery incorporated into the website is properly attributed to its respective source.
 
-##Data Source: [FootballDB](https://www.footballdb.com/fantasy-football/index.html?pos=RB&yr=2023&wk=%7Bx%7D&key=b6406b7aea3872d5bb677f064673c57f%27)
+## Data Source: [FootballDB](https://www.footballdb.com/fantasy-football/index.html?pos=RB&yr=2023&wk=%7Bx%7D&key=b6406b7aea3872d5bb677f064673c57f%27)
 
 ## Libraries: 
 - Flask
